@@ -10,7 +10,7 @@ class DnDAdventure extends FlameGame {
   Color backgroundColor() => Color.fromARGB(255, 237, 142, 142);
   late final CameraComponent cam;
 
-  final world = Level();
+  final world = Level(levelName: "testlvl");
 
   @override
   FutureOr<void> onLoad() async {

@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "testlvl.tmx",
+    "activeFile": "testlvl2.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -13,11 +13,25 @@
             "scaleInEditor": 1
         },
         "testlvl.tmx": {
-            "scale": 0.66203125,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                6
+            ],
+            "scale": 0.25,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 640.4531508142554,
-                "y": 640.4531508142554
+                "x": 618,
+                "y": 54
+            }
+        },
+        "testlvl2.tmx": {
+            "expandedObjectLayers": [
+                7
+            ],
+            "scale": 0.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 621,
+                "y": 581
             }
         }
     },
@@ -28,11 +42,12 @@
     "map.width": 40,
     "openFiles": [
         "DnDadventure.tsx",
-        "testlvl.tmx"
+        "testlvl2.tmx"
     ],
     "project": "dnd_adventure.tiled-project",
     "recentFiles": [
         "DnDadventure.tsx",
+        "testlvl2.tmx",
         "testlvl.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
