@@ -8,10 +8,13 @@ enum PlayerState { idle, walkingLeft, walkingRight, walkingUp, walkingDown }
 
 enum PlayerDirection { left, right, up, down, none }
 
-class Player extends SpriteAnimationComponent
+class Player extends SpriteAnimationGroupComponent
     with HasGameRef<DnDAdventure>, KeyboardHandler {
   String character;
-  Player({position, required this.character}) : super(position: position);
+  Player({
+    position,
+    required this.character,
+  }) : super(position: position);
 
   late final SpriteAnimation idleDownAnimation;
   late final SpriteAnimation idleUpAnimation;
@@ -22,9 +25,6 @@ class Player extends SpriteAnimationComponent
   late final SpriteAnimation walkRightAnimation;
   late final SpriteAnimation walkUpAnimation;
   late final SpriteAnimation walkDownAnimation;
-
-  late var animations;
-  late var current;
 
   final double stepTime = 0.05;
 

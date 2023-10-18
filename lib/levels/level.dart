@@ -24,6 +24,7 @@ class Level extends World {
           final player = Player(
               character: "dummie",
               position: Vector2(spawnPoint.x, spawnPoint.y));
+          //position: Vector2(10, 10));
           add(player);
           print("Player spawned at ${player.position}");
 

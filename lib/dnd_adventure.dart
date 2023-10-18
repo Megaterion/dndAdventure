@@ -12,7 +12,7 @@ class DnDAdventure extends FlameGame with HasKeyboardHandlerComponents {
   late final CameraComponent cam;
 
   @override
-  final world = Level(levelName: "testlvl");
+  final world = Level(levelName: "spawntest");
 
   @override
   FutureOr<void> onLoad() async {
