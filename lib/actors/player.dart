@@ -2,21 +2,35 @@ import 'dart:async';
 
 import 'package:dnd_adventure/dnd_adventure.dart';
 import 'package:flame/components.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/src/services/raw_keyboard.dart';
 
-enum PlayerState {
-  idle,
-  walking,
-}
+enum PlayerState { idle, walkingLeft, walkingRight, walkingUp, walkingDown }
 
-class Player extends SpriteAnimationComponent with HasGameRef<DnDAdventure> {
+enum PlayerDirection { left, right, up, down, none }
+
+class Player extends SpriteAnimationComponent
+    with HasGameRef<DnDAdventure>, KeyboardHandler {
   String character;
   Player({position, required this.character}) : super(position: position);
 
   late final SpriteAnimation idleDownAnimation;
+  late final SpriteAnimation idleUpAnimation;
+  late final SpriteAnimation idleLeftAnimation;
+  late final SpriteAnimation idleRightAnimation;
+
+  late final SpriteAnimation walkLeftAnimation;
+  late final SpriteAnimation walkRightAnimation;
+  late final SpriteAnimation walkUpAnimation;
   late final SpriteAnimation walkDownAnimation;
 
+  late var animations;
+  late var current;
+
   final double stepTime = 0.05;
+
+  PlayerDirection playerDirection = PlayerDirection.down;
+  double movespeed = 100;
+  Vector2 velocity = Vector2.zero();
 
   @override
   FutureOr<void> onLoad() {
@@ -24,17 +38,60 @@ class Player extends SpriteAnimationComponent with HasGameRef<DnDAdventure> {
     return super.onLoad();
   }
 
+  @override
+  void update(double dt) {
+    _updatePlayerMovement(dt);
+    super.update(dt);
+  }
+
+  @override
+  bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    final isDownKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyS);
+    final isUpKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyW);
+    final isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyA);
+    final isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD);
+
+    if (isLeftKeyPressed && isRightKeyPressed) {
+      playerDirection = PlayerDirection.none;
+    } else if (isUpKeyPressed && isDownKeyPressed) {
+      playerDirection = PlayerDirection.none;
+    } else if (isLeftKeyPressed) {
+      playerDirection = PlayerDirection.left;
+    } else if (isRightKeyPressed) {
+      playerDirection = PlayerDirection.right;
+    } else if (isUpKeyPressed) {
+      playerDirection = PlayerDirection.up;
+    } else if (isDownKeyPressed) {
+      playerDirection = PlayerDirection.down;
+    } else {
+      playerDirection = PlayerDirection.none;
+    }
+
+    return super.onKeyEvent(event, keysPressed);
+  }
+
   void _loadAllAnimations() {
     idleDownAnimation = _spriteAnimation("_idle down", 5);
+    idleUpAnimation = _spriteAnimation("_idle up", 5);
+    idleLeftAnimation = _spriteAnimation("_idle left", 5);
+    idleRightAnimation = _spriteAnimation("_idle right", 5);
+
+    walkLeftAnimation = _spriteAnimation("_walk left", 6);
+    walkRightAnimation = _spriteAnimation("_walk right", 6);
+    walkUpAnimation = _spriteAnimation("_walk up", 6);
+    walkDownAnimation = _spriteAnimation("_walk down", 6);
 
     // Enthällt alle Animationen
     animations = {
       PlayerState.idle: idleDownAnimation,
-      PlayerState.walking: walkDownAnimation,
+      PlayerState.walkingDown: walkDownAnimation,
+      PlayerState.walkingUp: walkUpAnimation,
+      PlayerState.walkingLeft: walkLeftAnimation,
+      PlayerState.walkingRight: walkRightAnimation,
     };
 
     // Setzt die Animation, die beim Start des Spiels abgespielt werden soll
-    durrent = PlayerState.idle;
+    current = PlayerState.idle;
   }
 
   SpriteAnimation _spriteAnimation(String state, int amount) {
@@ -42,5 +99,35 @@ class Player extends SpriteAnimationComponent with HasGameRef<DnDAdventure> {
         game.images.fromCache('character/$character/$state.png'),
         SpriteAnimationData.sequenced(
             amount: amount, textureSize: Vector2(32, 32), stepTime: stepTime));
+  }
+
+  void _updatePlayerMovement(double dt) {
+    double dirX = 0.0;
+    double dirY = 0.0;
+    switch (playerDirection) {
+      case PlayerDirection.left:
+        current = PlayerState.walkingLeft;
+        dirX -= movespeed;
+        break;
+      case PlayerDirection.right:
+        current = PlayerState.walkingRight;
+        dirX += movespeed;
+        break;
+      case PlayerDirection.up:
+        current = PlayerState.walkingUp;
+        dirY -= movespeed;
+        break;
+      case PlayerDirection.down:
+        current = PlayerState.walkingDown;
+        dirY += movespeed;
+        break;
+      case PlayerDirection.none:
+        current = PlayerState.idle;
+        break;
+      default:
+    }
+
+    velocity = Vector2(dirX, dirY);
+    position += velocity * dt;
   }
 }

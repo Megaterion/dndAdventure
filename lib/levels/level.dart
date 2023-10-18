@@ -6,7 +6,7 @@ import 'package:flame_tiled/flame_tiled.dart';
 
 class Level extends World {
   late final String levelName;
-  level({required this.levelName});
+  Level({required this.levelName});
   late TiledComponent level;
 
   @override
