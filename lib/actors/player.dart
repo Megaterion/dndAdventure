@@ -4,7 +4,16 @@ import 'package:dnd_adventure/dnd_adventure.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/src/services/raw_keyboard.dart';
 
-enum PlayerState { idle, walkingLeft, walkingRight, walkingUp, walkingDown }
+enum PlayerState {
+  idleLeft,
+  idleRight,
+  idleUp,
+  idleDown,
+  walkingLeft,
+  walkingRight,
+  walkingUp,
+  walkingDown
+}
 
 enum PlayerDirection { left, right, up, down, none }
 
@@ -83,7 +92,10 @@ class Player extends SpriteAnimationGroupComponent
 
     // Enthällt alle Animationen
     animations = {
-      PlayerState.idle: idleDownAnimation,
+      PlayerState.idleDown: idleDownAnimation,
+      PlayerState.idleUp: idleUpAnimation,
+      PlayerState.idleLeft: idleLeftAnimation,
+      PlayerState.idleRight: idleRightAnimation,
       PlayerState.walkingDown: walkDownAnimation,
       PlayerState.walkingUp: walkUpAnimation,
       PlayerState.walkingLeft: walkLeftAnimation,
@@ -91,7 +103,7 @@ class Player extends SpriteAnimationGroupComponent
     };
 
     // Setzt die Animation, die beim Start des Spiels abgespielt werden soll
-    current = PlayerState.idle;
+    //current = PlayerState.idleDown;
   }
 
   SpriteAnimation _spriteAnimation(String state, int amount) {
@@ -104,25 +116,47 @@ class Player extends SpriteAnimationGroupComponent
   void _updatePlayerMovement(double dt) {
     double dirX = 0.0;
     double dirY = 0.0;
+    String facing = "";
+
     switch (playerDirection) {
       case PlayerDirection.left:
-        current = PlayerState.walkingLeft;
         dirX -= movespeed;
+        facing = "left";
+        current = PlayerState.walkingLeft;
         break;
       case PlayerDirection.right:
-        current = PlayerState.walkingRight;
         dirX += movespeed;
+        facing = "right";
+        current = PlayerState.walkingRight;
         break;
       case PlayerDirection.up:
-        current = PlayerState.walkingUp;
         dirY -= movespeed;
+        facing = "up";
+        current = PlayerState.walkingUp;
         break;
       case PlayerDirection.down:
-        current = PlayerState.walkingDown;
         dirY += movespeed;
+        facing = "down";
+        current = PlayerState.walkingDown;
         break;
       case PlayerDirection.none:
-        current = PlayerState.idle;
+        // Setzt die Idle-Animation, basierend auf der letzten Richtung, in die der Spieler gegangen ist
+        switch (facing) {
+          case "left":
+            current = PlayerState.idleLeft;
+            break;
+          case "right":
+            current = PlayerState.idleRight;
+            break;
+          case "up":
+            current = PlayerState.idleUp;
+            break;
+          case "down":
+            current = PlayerState.idleDown;
+            break;
+          default:
+          //current = PlayerState.idleDown;
+        }
         break;
       default:
     }
