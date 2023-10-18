@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:async';
 
 import 'package:dnd_adventure/actors/player.dart';
@@ -18,11 +20,13 @@ class Level extends World {
     final spawnPointsLayer = level.tileMap.getLayer<ObjectGroup>("Spawnpunkte");
     for (final spawnPoint in spawnPointsLayer!.objects) {
       switch (spawnPoint.class_) {
-        case "PlayerSpawn":
+        case 'PlayerSpawn':
           final player = Player(
               character: "dummie",
               position: Vector2(spawnPoint.x, spawnPoint.y));
           add(player);
+          print("Player spawned at ${player.position}");
+
           break;
         default:
       }

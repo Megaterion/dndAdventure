@@ -45,9 +45,6 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <objectgroup id="6" name="Spawnpunkte">
-  <object id="1" name="PlayerSpawn" x="992.667" y="384" width="31.6667" height="31.3333"/>
- </objectgroup>
  <layer id="3" name="Wand" width="40" height="40">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -180,4 +177,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
+ <objectgroup id="6" name="Spawnpunkte">
+  <object id="1" name="Start" type="PlayerSpawn" x="992.667" y="384" width="31.6667" height="31.3333"/>
+ </objectgroup>
 </map>

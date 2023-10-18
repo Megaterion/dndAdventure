@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "testlvl2.tmx",
+    "activeFile": "testlvl.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -19,8 +19,8 @@
             "scale": 0.25,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 618,
-                "y": 54
+                "x": 608,
+                "y": 44
             }
         },
         "testlvl2.tmx": {
@@ -28,10 +28,10 @@
                 7
             ],
             "scale": 0.5,
-            "selectedLayer": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 621,
-                "y": 581
+                "x": 732,
+                "y": 639
             }
         }
     },
@@ -42,7 +42,8 @@
     "map.width": 40,
     "openFiles": [
         "DnDadventure.tsx",
-        "testlvl2.tmx"
+        "testlvl2.tmx",
+        "testlvl.tmx"
     ],
     "project": "dnd_adventure.tiled-project",
     "recentFiles": [

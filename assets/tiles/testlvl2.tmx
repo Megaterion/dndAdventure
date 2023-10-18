@@ -178,6 +178,6 @@
 </data>
  </layer>
  <objectgroup id="7" name="Spawnpunkte">
-  <object id="1" name="PlayerSpawn" x="416" y="254" width="30.6667" height="33.3333"/>
+  <object id="1" name="Stairs" type="PlayerSpawn" x="416" y="254" width="30.6667" height="33.3333"/>
  </objectgroup>
 </map>
