@@ -98,7 +98,7 @@ class Player extends SpriteAnimationGroupComponent
     return SpriteAnimation.fromFrameData(
         game.images.fromCache('character/$character/$state.png'),
         SpriteAnimationData.sequenced(
-            amount: amount, textureSize: Vector2(32, 32), stepTime: stepTime));
+            amount: amount, textureSize: Vector2(64, 64), stepTime: stepTime));
   }
 
   void _updatePlayerMovement(double dt) {

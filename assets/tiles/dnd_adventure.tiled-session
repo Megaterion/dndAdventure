@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "testlvl.tmx",
+    "activeFile": "spawntest.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -53,14 +53,15 @@
     "map.width": 40,
     "openFiles": [
         "DnDadventure.tsx",
-        "testlvl2.tmx",
-        "testlvl.tmx"
+        "testlvl.tmx",
+        "spawntest.tmx"
     ],
     "project": "dnd_adventure.tiled-project",
     "recentFiles": [
-        "testlvl2.tmx",
         "DnDadventure.tsx",
-        "testlvl.tmx"
+        "testlvl.tmx",
+        "spawntest.tmx",
+        "testlvl2.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }
