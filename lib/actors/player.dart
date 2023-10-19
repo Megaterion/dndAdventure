@@ -36,6 +36,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation walkDownAnimation;
 
   final double stepTime = 0.05;
+  String facing = "down";
 
   PlayerDirection playerDirection = PlayerDirection.down;
   double movespeed = 100;
@@ -90,7 +91,7 @@ class Player extends SpriteAnimationGroupComponent
     walkUpAnimation = _spriteAnimation("_walk up", 6);
     walkDownAnimation = _spriteAnimation("_walk down", 6);
 
-    // Enthällt alle Animationen
+    // Enthält alle Animationen
     animations = {
       PlayerState.idleDown: idleDownAnimation,
       PlayerState.idleUp: idleUpAnimation,
@@ -102,8 +103,9 @@ class Player extends SpriteAnimationGroupComponent
       PlayerState.walkingRight: walkRightAnimation,
     };
 
+    playerDirection = PlayerDirection.none;
     // Setzt die Animation, die beim Start des Spiels abgespielt werden soll
-    //current = PlayerState.idleDown;
+    current = PlayerState.idleDown;
   }
 
   SpriteAnimation _spriteAnimation(String state, int amount) {
@@ -116,7 +118,6 @@ class Player extends SpriteAnimationGroupComponent
   void _updatePlayerMovement(double dt) {
     double dirX = 0.0;
     double dirY = 0.0;
-    String facing = "";
 
     switch (playerDirection) {
       case PlayerDirection.left:
@@ -140,7 +141,6 @@ class Player extends SpriteAnimationGroupComponent
         current = PlayerState.walkingDown;
         break;
       case PlayerDirection.none:
-        // Setzt die Idle-Animation, basierend auf der letzten Richtung, in die der Spieler gegangen ist
         switch (facing) {
           case "left":
             current = PlayerState.idleLeft;
@@ -155,7 +155,8 @@ class Player extends SpriteAnimationGroupComponent
             current = PlayerState.idleDown;
             break;
           default:
-          //current = PlayerState.idleDown;
+            current = PlayerState.idleDown;
+            break;
         }
         break;
       default:
