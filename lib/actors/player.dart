@@ -35,7 +35,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation walkUpAnimation;
   late final SpriteAnimation walkDownAnimation;
 
-  final double stepTime = 0.05;
+  final double stepTime = 0.1;
   String facing = "down";
 
   PlayerDirection playerDirection = PlayerDirection.down;
