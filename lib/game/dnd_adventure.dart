@@ -1,16 +1,18 @@
 import 'dart:async';
 import 'dart:ui';
 
-import 'package:dnd_adventure/levels/level.dart';
+import 'package:dnd_adventure/game/level/level.dart';
 import 'package:flame/components.dart';
 import 'package:flame/game.dart';
+import 'package:flame/input.dart';
 
-class DnDAdventure extends FlameGame {
+class DnDAdventure extends FlameGame with HasKeyboardHandlerComponents {
   @override
-  Color backgroundColor() => Color.fromARGB(255, 237, 142, 142);
+  Color backgroundColor() => const Color.fromARGB(255, 237, 142, 142);
   late final CameraComponent cam;
 
-  final world = Level();
+  @override
+  final world = Level(levelName: "testlvl");
 
   @override
   FutureOr<void> onLoad() async {
@@ -18,8 +20,9 @@ class DnDAdventure extends FlameGame {
     await images.loadAllImages();
 
     cam = CameraComponent.withFixedResolution(
-        world: world, width: 1280, height: 1280);
-    cam.viewfinder.anchor = Anchor.topLeft;
+        world: world, width: 480, height: 255);
+    cam.viewfinder.anchor = Anchor.center;
+
     addAll([cam, world]);
     return super.onLoad();
   }

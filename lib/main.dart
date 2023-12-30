@@ -1,4 +1,4 @@
-import 'package:dnd_adventure/dnd_adventure.dart';
+import 'package:dnd_adventure/game/dnd_adventure.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/foundation.dart';
