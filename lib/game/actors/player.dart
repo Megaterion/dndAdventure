@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:dnd_adventure/dnd_adventure.dart';
+import 'package:dnd_adventure/game/dnd_adventure.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/src/services/raw_keyboard.dart';
 
@@ -45,6 +45,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
+
     return super.onLoad();
   }
 

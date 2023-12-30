@@ -2,11 +2,12 @@
 
 import 'dart:async';
 
-import 'package:dnd_adventure/actors/player.dart';
+import 'package:dnd_adventure/game/dnd_adventure.dart';
+import 'package:dnd_adventure/game/actors/player.dart';
 import 'package:flame/components.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 
-class Level extends World {
+class Level extends World with HasGameRef<DnDAdventure> {
   late final String levelName;
   Level({required this.levelName});
   late TiledComponent level;
@@ -24,8 +25,9 @@ class Level extends World {
           final player = Player(
               character: "dummie",
               position: Vector2(spawnPoint.x, spawnPoint.y));
-          //position: Vector2(10, 10));
           add(player);
+          gameRef.cam.follow(player);
+
           print("Player spawned at ${player.position}");
 
           break;
