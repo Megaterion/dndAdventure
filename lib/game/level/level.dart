@@ -2,7 +2,7 @@
 
 import 'dart:async';
 
-import 'package:dnd_adventure/game/collisionHandler.dart';
+import 'package:dnd_adventure/game/level/levelCollider.dart';
 import 'package:dnd_adventure/game/dnd_adventure.dart';
 import 'package:dnd_adventure/game/actors/player.dart';
 import 'package:flame/components.dart';
@@ -12,8 +12,9 @@ class Level extends World with HasGameRef<DnDAdventure> {
   late final String levelName;
   Level({required this.levelName});
   late TiledComponent level;
+  late final player;
 
-  List<CollisionHandler> colliders = [];
+  List<LevelCollider> colliders = [];
 
   @override
   FutureOr<void> onLoad() async {
@@ -26,7 +27,7 @@ class Level extends World with HasGameRef<DnDAdventure> {
       for (final spawnPoint in spawnPointsLayer.objects) {
         switch (spawnPoint.class_) {
           case 'PlayerSpawn':
-            final player = Player(
+            player = Player(
                 character: "dummie",
                 position: Vector2(spawnPoint.x, spawnPoint.y));
             add(player);
@@ -40,12 +41,13 @@ class Level extends World with HasGameRef<DnDAdventure> {
       }
     }
 
-    final CollisionLayer = level.tileMap.getLayer<ObjectGroup>("Collider");
-    if (CollisionLayer != null) {
-      for (final collider in CollisionLayer.objects) {
+    // Auslesen des Kollisionslayers
+    final collisionLayer = level.tileMap.getLayer<ObjectGroup>("Collider");
+    if (collisionLayer != null) {
+      for (final collider in collisionLayer.objects) {
         switch (collider.class_) {
           case 'Pyramid':
-            final pyramid = CollisionHandler(
+            final pyramid = LevelCollider(
               position: Vector2(collider.x, collider.y),
               size: Vector2(collider.width, collider.height),
               type: "pyramid",
@@ -54,7 +56,7 @@ class Level extends World with HasGameRef<DnDAdventure> {
             add(pyramid);
             break;
           default:
-            final defaultCollider = CollisionHandler(
+            final defaultCollider = LevelCollider(
               position: Vector2(collider.x, collider.y),
               size: Vector2(collider.width, collider.height),
             );
@@ -64,6 +66,7 @@ class Level extends World with HasGameRef<DnDAdventure> {
       }
     }
 
+    player.colliders = colliders;
     return super.onLoad();
   }
 }

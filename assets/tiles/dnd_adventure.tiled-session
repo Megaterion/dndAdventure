@@ -27,11 +27,11 @@
             "expandedObjectLayers": [
                 10
             ],
-            "scale": 3,
-            "selectedLayer": 7,
+            "scale": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 655.3333333333333,
-                "y": 639.8333333333333
+                "x": 781,
+                "y": 746
             }
         },
         "testlvl2.tmx": {
@@ -41,8 +41,8 @@
             "scale": 5.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 456.54545454545456,
-                "y": 258.90909090909093
+                "x": 638.7272727272727,
+                "y": 638.7272727272727
             }
         }
     },

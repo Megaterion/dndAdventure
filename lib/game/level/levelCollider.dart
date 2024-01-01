@@ -1,8 +1,8 @@
 import 'package:flame/components.dart';
 
-class CollisionHandler extends PositionComponent {
+class LevelCollider extends PositionComponent {
   String type;
-  CollisionHandler({
+  LevelCollider({
     position,
     size,
     this.type = "default",

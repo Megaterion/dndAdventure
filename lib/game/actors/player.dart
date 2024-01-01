@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:dnd_adventure/game/level/levelCollider.dart';
 import 'package:dnd_adventure/game/dnd_adventure.dart';
+import 'package:dnd_adventure/game/utils.dart';
 import 'package:flame/components.dart';
 import 'package:flutter/src/services/raw_keyboard.dart';
 
@@ -43,6 +45,8 @@ class Player extends SpriteAnimationGroupComponent
   double moveSpeed = 100;
   Vector2 velocity = Vector2.zero();
 
+  List<LevelCollider> colliders = [];
+
   @override
   FutureOr<void> onLoad() {
     _loadAllAnimations();
@@ -54,6 +58,7 @@ class Player extends SpriteAnimationGroupComponent
   void update(double dt) {
     _updatePlayerState();
     _updatePlayerMovement(dt);
+    _checkForCollisions();
     super.update(dt);
   }
 
@@ -150,6 +155,33 @@ class Player extends SpriteAnimationGroupComponent
     velocity.x = horizontalMovement;
     velocity.y = verticalMovement;
 
-    position += velocity * moveSpeed * dt;
+    position.x += velocity.x * moveSpeed * dt;
+    position.y += velocity.y * moveSpeed * dt;
+  }
+
+  // Spieler soll nicht durch die Wand laufen können
+  void _checkForCollisions() {
+    for (final collider in colliders) {
+      if (checkCollision(this, collider)) {
+        switch (collider.type) {
+          case "pyramid":
+            break;
+          default: // TODO: Glitch beheben
+            if (velocity.x < 0) {
+              velocity.x = 0;
+              position.x = collider.position.x + collider.width;
+            } else if (velocity.x > 0) {
+              velocity.x = 0;
+              position.x = collider.position.x - width;
+            } else if (velocity.y < 0) {
+              velocity.y = 0;
+              position.y = collider.position.y + collider.height;
+            } else if (velocity.y > 0) {
+              velocity.y = 0;
+              position.y = collider.position.y - height;
+            }
+        }
+      }
+    }
   }
 }
