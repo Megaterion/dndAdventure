@@ -15,15 +15,15 @@ enum PlayerState {
   walkingDown
 }
 
-enum PlayerDirection { left, right, up, down, none }
-
 class Player extends SpriteAnimationGroupComponent
     with HasGameRef<DnDAdventure>, KeyboardHandler {
   String character;
   Player({
     position,
     required this.character,
-  }) : super(position: position);
+  }) : super(position: position) {
+    debugMode = true;
+  }
 
   late final SpriteAnimation idleDownAnimation;
   late final SpriteAnimation idleUpAnimation;
@@ -35,11 +35,12 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation walkUpAnimation;
   late final SpriteAnimation walkDownAnimation;
 
-  final double stepTime = 0.1;
+  final double stepTime = 0.15; // Zeit zwischen den einzelnen Frames
   String facing = "down";
 
-  PlayerDirection playerDirection = PlayerDirection.down;
-  double movespeed = 100;
+  double horizontalMovement = 0;
+  double verticalMovement = 0;
+  double moveSpeed = 100;
   Vector2 velocity = Vector2.zero();
 
   @override
@@ -51,32 +52,26 @@ class Player extends SpriteAnimationGroupComponent
 
   @override
   void update(double dt) {
+    _updatePlayerState();
     _updatePlayerMovement(dt);
     super.update(dt);
   }
 
   @override
   bool onKeyEvent(RawKeyEvent event, Set<LogicalKeyboardKey> keysPressed) {
+    horizontalMovement = 0;
+    verticalMovement = 0;
+
     final isDownKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyS);
     final isUpKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyW);
     final isLeftKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyA);
     final isRightKeyPressed = keysPressed.contains(LogicalKeyboardKey.keyD);
 
-    if (isLeftKeyPressed && isRightKeyPressed) {
-      playerDirection = PlayerDirection.none;
-    } else if (isUpKeyPressed && isDownKeyPressed) {
-      playerDirection = PlayerDirection.none;
-    } else if (isLeftKeyPressed) {
-      playerDirection = PlayerDirection.left;
-    } else if (isRightKeyPressed) {
-      playerDirection = PlayerDirection.right;
-    } else if (isUpKeyPressed) {
-      playerDirection = PlayerDirection.up;
-    } else if (isDownKeyPressed) {
-      playerDirection = PlayerDirection.down;
-    } else {
-      playerDirection = PlayerDirection.none;
-    }
+    horizontalMovement += isLeftKeyPressed ? -1 : 0;
+    horizontalMovement += isRightKeyPressed ? 1 : 0;
+
+    verticalMovement += isUpKeyPressed ? -1 : 0;
+    verticalMovement += isDownKeyPressed ? 1 : 0;
 
     return super.onKeyEvent(event, keysPressed);
   }
@@ -104,7 +99,6 @@ class Player extends SpriteAnimationGroupComponent
       PlayerState.walkingRight: walkRightAnimation,
     };
 
-    playerDirection = PlayerDirection.none;
     // Setzt die Animation, die beim Start des Spiels abgespielt werden soll
     current = PlayerState.idleDown;
   }
@@ -116,54 +110,46 @@ class Player extends SpriteAnimationGroupComponent
             amount: amount, textureSize: Vector2(64, 64), stepTime: stepTime));
   }
 
-  void _updatePlayerMovement(double dt) {
-    double dirX = 0.0;
-    double dirY = 0.0;
+  void _updatePlayerState() {
+    PlayerState playerState = PlayerState.idleDown;
 
-    switch (playerDirection) {
-      case PlayerDirection.left:
-        dirX -= movespeed;
-        facing = "left";
-        current = PlayerState.walkingLeft;
-        break;
-      case PlayerDirection.right:
-        dirX += movespeed;
-        facing = "right";
-        current = PlayerState.walkingRight;
-        break;
-      case PlayerDirection.up:
-        dirY -= movespeed;
-        facing = "up";
-        current = PlayerState.walkingUp;
-        break;
-      case PlayerDirection.down:
-        dirY += movespeed;
-        facing = "down";
-        current = PlayerState.walkingDown;
-        break;
-      case PlayerDirection.none:
-        switch (facing) {
-          case "left":
-            current = PlayerState.idleLeft;
-            break;
-          case "right":
-            current = PlayerState.idleRight;
-            break;
-          case "up":
-            current = PlayerState.idleUp;
-            break;
-          case "down":
-            current = PlayerState.idleDown;
-            break;
-          default:
-            current = PlayerState.idleDown;
-            break;
-        }
-        break;
-      default:
+    // äbhänging von velocity.x und velocity.y wird die Animation gesetzt
+    if (velocity.x < 0) {
+      playerState = PlayerState.walkingLeft;
+      facing = "left";
+    } else if (velocity.x > 0) {
+      playerState = PlayerState.walkingRight;
+      facing = "right";
+    } else if (velocity.y < 0) {
+      playerState = PlayerState.walkingUp;
+      facing = "up";
+    } else if (velocity.y > 0) {
+      playerState = PlayerState.walkingDown;
+      facing = "down";
+    } else {
+      switch (facing) {
+        case "left":
+          playerState = PlayerState.idleLeft;
+          break;
+        case "right":
+          playerState = PlayerState.idleRight;
+          break;
+        case "up":
+          playerState = PlayerState.idleUp;
+          break;
+        case "down":
+          playerState = PlayerState.idleDown;
+          break;
+      }
     }
 
-    velocity = Vector2(dirX, dirY);
-    position += velocity * dt;
+    current = playerState;
+  }
+
+  void _updatePlayerMovement(double dt) {
+    velocity.x = horizontalMovement;
+    velocity.y = verticalMovement;
+
+    position += velocity * moveSpeed * dt;
   }
 }
