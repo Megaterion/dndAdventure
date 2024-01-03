@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "testlvl2.tmx",
+    "activeFile": "testlvl.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -30,8 +30,8 @@
             "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 781,
-                "y": 746
+                "x": 780,
+                "y": 745
             }
         },
         "testlvl2.tmx": {
@@ -59,8 +59,8 @@
     "project": "dnd_adventure.tiled-project",
     "recentFiles": [
         "DnDadventure.tsx",
-        "testlvl.tmx",
         "testlvl2.tmx",
+        "testlvl.tmx",
         "spawntest.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"

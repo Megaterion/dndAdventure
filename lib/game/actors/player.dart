@@ -37,7 +37,7 @@ class Player extends SpriteAnimationGroupComponent
   late final SpriteAnimation walkUpAnimation;
   late final SpriteAnimation walkDownAnimation;
 
-  final double stepTime = 0.15; // Zeit zwischen den einzelnen Frames
+  final double stepTime = 0.15; // Zeit zwischen den einzelnen Animations-Frames
   String facing = "down";
 
   double horizontalMovement = 0;
@@ -57,8 +57,7 @@ class Player extends SpriteAnimationGroupComponent
   @override
   void update(double dt) {
     _updatePlayerState();
-    _updatePlayerMovement(dt);
-    _checkForCollisions();
+    _movePlayer(dt, moveSpeed);
     super.update(dt);
   }
 
@@ -151,35 +150,48 @@ class Player extends SpriteAnimationGroupComponent
     current = playerState;
   }
 
-  void _updatePlayerMovement(double dt) {
+  void _movePlayer(double dt, double moveSpeed) {
     velocity.x = horizontalMovement;
     velocity.y = verticalMovement;
 
+    // Überprüfe, ob die Geschwindigkeit diagonal ist
+    if (velocity.x != 0 && velocity.y != 0) {
+      // Normalisiere die Geschwindigkeit, um sicherzustellen, dass sie nicht über den Grenzwert hinausgeht
+      double length = velocity.length;
+      if (length > 1.0) {
+        velocity /= length;
+      }
+    }
+
     position.x += velocity.x * moveSpeed * dt;
+    _checkForCollisions("horizontal");
     position.y += velocity.y * moveSpeed * dt;
+    _checkForCollisions("vertical");
   }
 
   // Spieler soll nicht durch die Wand laufen können
-  void _checkForCollisions() {
+  void _checkForCollisions(String direction) {
     for (final collider in colliders) {
       if (checkCollision(this, collider)) {
         switch (collider.type) {
           case "pyramid":
             break;
-          default: // TODO: Glitch beheben
-            if (velocity.x < 0) {
-              velocity.x = 0;
-              position.x = collider.position.x + collider.width;
-            } else if (velocity.x > 0) {
-              velocity.x = 0;
-              position.x = collider.position.x - width;
-            } else if (velocity.y < 0) {
-              velocity.y = 0;
-              position.y = collider.position.y + collider.height;
-            } else if (velocity.y > 0) {
-              velocity.y = 0;
-              position.y = collider.position.y - height;
+          default:
+            if (direction == "horizontal") {
+              if (velocity.x > 0) {
+                position.x = collider.position.x - size.x;
+              } else if (velocity.x < 0) {
+                position.x = collider.position.x + collider.size.x;
+              }
             }
+            if (direction == "vertical") {
+              if (velocity.y > 0) {
+                position.y = collider.position.y - size.y;
+              } else if (velocity.y < 0) {
+                position.y = collider.position.y + collider.size.y;
+              }
+            }
+            break;
         }
       }
     }
