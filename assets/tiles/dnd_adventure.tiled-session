@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "spawntest.tmx",
+    "activeFile": "testlvl.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -16,33 +16,33 @@
             "expandedObjectLayers": [
                 2
             ],
-            "scale": 5.5,
+            "scale": 0.33,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 817.090909090909,
-                "y": 372.72727272727275
+                "x": 866.6666666666667,
+                "y": 849.9999999999998
             }
         },
         "testlvl.tmx": {
             "expandedObjectLayers": [
-                6
+                10
             ],
-            "scale": 8,
+            "scale": 1,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 1014,
-                "y": 412.625
+                "x": 780,
+                "y": 745
             }
         },
         "testlvl2.tmx": {
             "expandedObjectLayers": [
                 7
             ],
-            "scale": 0.5,
+            "scale": 5.5,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 614,
-                "y": 574
+                "x": 638.7272727272727,
+                "y": 638.7272727272727
             }
         }
     },
@@ -54,14 +54,14 @@
     "openFiles": [
         "DnDadventure.tsx",
         "testlvl.tmx",
-        "spawntest.tmx"
+        "testlvl2.tmx"
     ],
     "project": "dnd_adventure.tiled-project",
     "recentFiles": [
         "DnDadventure.tsx",
+        "testlvl2.tmx",
         "testlvl.tmx",
-        "spawntest.tmx",
-        "testlvl2.tmx"
+        "spawntest.tmx"
     ],
     "tileset.lastUsedFormat": "tsx"
 }
