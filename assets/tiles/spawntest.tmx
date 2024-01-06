@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="2">
- <objectgroup id="2" name="Spawnpunkte">
-  <object id="1" name="Start" type="PlayerSpawn" x="768.93" y="352.115" width="32" height="32"/>
- </objectgroup>
-</map>
