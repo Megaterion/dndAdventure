@@ -1,5 +1,7 @@
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/data/icudtl.dat
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/flutter_windows.dll
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/app_links_plugin.dll
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/url_launcher_windows_plugin.dll
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/Debug/data/flutter_assets/assets/images/character/dummie/_attack%20down.png

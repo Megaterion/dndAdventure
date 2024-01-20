@@ -8,3 +8,9 @@ C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/flutter/C
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/CMakeFiles/dnd_adventure.dir
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/CMakeFiles/INSTALL.dir
 C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/runner/CMakeFiles/ALL_BUILD.dir
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/app_links_plugin.dir
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/INSTALL.dir
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/ALL_BUILD.dir
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/url_launcher_windows/CMakeFiles/url_launcher_windows_plugin.dir
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/url_launcher_windows/CMakeFiles/INSTALL.dir
+C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/url_launcher_windows/CMakeFiles/ALL_BUILD.dir
