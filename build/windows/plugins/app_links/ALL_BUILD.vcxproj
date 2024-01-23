@@ -21,7 +21,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{000BC3BD-31EA-3585-A04A-F5FB5E854689}</ProjectGuid>
+    <ProjectGuid>{5CB8A99C-6FB9-3B85-95D2-E5894042B83E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -88,11 +88,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\windows\flutter\ephemeral\.plugin_symlinks\app_links\windows\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\windows\flutter\ephemeral\.plugin_symlinks\app_links\windows\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/app_links/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/app_links/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-file C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-file C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -101,11 +101,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/app_links/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">Building Custom Rule C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/app_links/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-file C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-file C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -114,11 +114,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/app_links/windows/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/app_links/windows/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-file C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/generate.stamp
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-file C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows/plugins/app_links/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -127,21 +127,21 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\ZERO_CHECK.vcxproj">
-      <Project>{4D0DB861-737F-3388-A6D2-50A31B4417AB}</Project>
+    <ProjectReference Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\ZERO_CHECK.vcxproj">
+      <Project>{2DFA2445-8FAC-3EE4-B6F1-1468572D8E2D}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\app_links_plugin.vcxproj">
-      <Project>{75244338-0D70-360A-A054-43E184580FF1}</Project>
+    <ProjectReference Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\app_links\app_links_plugin.vcxproj">
+      <Project>{2B2222B6-60E6-30C6-AE0B-A649D1CEC561}</Project>
       <Name>app_links_plugin</Name>
     </ProjectReference>
   </ItemGroup>

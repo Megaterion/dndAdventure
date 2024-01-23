@@ -1,4 +1,5 @@
 import 'package:dnd_adventure/game/dnd_adventure.dart';
+import 'package:dnd_adventure/pages/launcher.dart';
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
 import 'package:flutter/foundation.dart';
@@ -18,7 +19,8 @@ Future<void> main() async {
   Flame.device.fullScreen();
   Flame.device.setLandscape();
 
-  // Initialisiert Firebase
+  //Launcher launcher = Launcher();
+  //runApp(launcher as Widget);
 
   DnDAdventure game = DnDAdventure();
   runApp(GameWidget(game: kDebugMode ? DnDAdventure() : game));

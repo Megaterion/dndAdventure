@@ -1,6 +1,6 @@
-^C:\USERS\MEGATERION\ONEDRIVE\DOKUMENTE\CODE\DNDADVENTURE\BUILD\WINDOWS\CMAKEFILES\C67054B24FA3F64049122DDB73DC0F28\GENERATE.STAMP.RULE
+^C:\USERS\HANNE\ONEDRIVE\DOKUMENTE\CODE\DNDADVENTURE\BUILD\WINDOWS\CMAKEFILES\F49FF65C7A75981806E366FF19CE9382\GENERATE.STAMP.RULE
 setlocal
-"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/build/windows/dnd_adventure.sln
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows -BC:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/build/windows/dnd_adventure.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

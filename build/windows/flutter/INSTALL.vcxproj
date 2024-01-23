@@ -18,7 +18,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{6DB16FE7-B2DB-3569-BDD4-FDA4C680C043}</ProjectGuid>
+    <ProjectGuid>{82F2B50C-5146-326F-8C0D-B5422F695495}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -100,7 +100,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\CMakeFiles\4c39cc4326aa260a16ada44c87fc10cc\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\CMakeFiles\246122d23f2894c4ca8f2f306ad5185d\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .
@@ -112,7 +112,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Profile|x64'"> </Message>
@@ -126,7 +126,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Profile|x64'">false</VerifyInputsAndOutputsExist>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> </Message>
@@ -140,20 +140,20 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\CMakeFiles\INSTALL_force</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</VerifyInputsAndOutputsExist>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\ZERO_CHECK.vcxproj">
-      <Project>{4D0DB861-737F-3388-A6D2-50A31B4417AB}</Project>
+    <ProjectReference Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\ZERO_CHECK.vcxproj">
+      <Project>{2DFA2445-8FAC-3EE4-B6F1-1468572D8E2D}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\url_launcher_windows\ALL_BUILD.vcxproj">
-      <Project>{000BC3BD-31EA-3585-A04A-F5FB5E854689}</Project>
+    <ProjectReference Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\plugins\url_launcher_windows\ALL_BUILD.vcxproj">
+      <Project>{5CB8A99C-6FB9-3B85-95D2-E5894042B83E}</Project>
       <Name>ALL_BUILD</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

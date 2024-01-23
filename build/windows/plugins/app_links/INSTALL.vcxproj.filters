@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\CMakeFiles\c9562cc5846c21360b998cf4b9b8bef8\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\CMakeFiles\fa800777644edfb50763eafc0a63973c\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{CE9AB562-7D9F-38B3-9738-738B434BB784}</UniqueIdentifier>
+      <UniqueIdentifier>{A6DFAE41-1878-3B1F-907C-0A5A4DBCA37E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

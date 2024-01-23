@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/windows
+# Install script for directory: C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows/flutter/ephemeral/.plugin_symlinks/url_launcher_windows/windows
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
