@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows/flutter
+# Install script for directory: C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows/flutter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

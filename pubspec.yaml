@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flame: ^1.10.0
   flame_tiled: ^1.15.0
+  nakama: ^1.0.1
 
 dev_dependencies:
   flutter_test:

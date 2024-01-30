@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Megaterion/OneDrive/Dokumente/Code/dndAdventure/windows/runner
+# Install script for directory: C:/Users/hanne/OneDrive/Dokumente/Code/dndAdventure/windows/runner
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

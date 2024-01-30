@@ -1,7 +1,5 @@
-import 'package:dnd_adventure/game/dnd_adventure.dart';
+import 'package:dnd_adventure/screens/main_menu.dart';
 import 'package:flame/flame.dart';
-import 'package:flame/game.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -10,8 +8,12 @@ Future<void> main() async {
   Flame.device.fullScreen();
   Flame.device.setLandscape();
 
-  // Initialisiert Firebase
 
-  DnDAdventure game = DnDAdventure();
-  runApp(GameWidget(game: kDebugMode ? DnDAdventure() : game));
+  runApp(
+    MaterialApp(
+      themeMode: ThemeMode.dark,
+      darkTheme: ThemeData.dark(),
+      home: const MainMenu()
+    )
+  );
 }

@@ -2,19 +2,19 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\x64\Debug\flutter_assemble</FullPath>
+      <FullPath>C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\flutter\x64\Debug\flutter_assemble</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\runner\Debug\dnd_adventure.exe</FullPath>
+      <FullPath>C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\runner\Debug\dnd_adventure.exe</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\x64\Debug\ALL_BUILD</FullPath>
+      <FullPath>C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\x64\Debug\ALL_BUILD</FullPath>
     </ProjectOutput>
     <ProjectOutput>
-      <FullPath>C:\Users\Megaterion\OneDrive\Dokumente\Code\dndAdventure\build\windows\x64\Debug\INSTALL</FullPath>
+      <FullPath>C:\Users\hanne\OneDrive\Dokumente\Code\dndAdventure\build\windows\x64\Debug\INSTALL</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
