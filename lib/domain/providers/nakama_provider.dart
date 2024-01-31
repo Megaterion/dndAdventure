@@ -34,5 +34,6 @@ class NakamaProvider extends ChangeNotifier {
       password: password,
     );
 
-    _session = session;}
+    _session = session;
+  }
 }

@@ -61,22 +61,20 @@ class LoginMenu extends ConsumerWidget {
                   debugPrint('Empty field');
                   return;
                 }
+                
                 try {
-                  // login
                   nakamaProvider.loginUser(
                   username: username,
                   password: password,
                   );
-
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => const MainMenu()));
-
                 } catch (e) {
                   // Handle registration error
                   debugPrint('Error login user: $e');
                 }
 
                 
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => const MainMenu()));
               },
               child: const Text("Login"),
             ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +14,19 @@ class MainMenu extends StatelessWidget {
             const Padding(
                 padding: EdgeInsets.symmetric(vertical: 50.0),
                 child: Text("DnD Adventure")),
+
+
+            const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.0),
+                child: Text("eingeloggt als: ")),
+
+
+
+
+
+
+
+
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushReplacement(

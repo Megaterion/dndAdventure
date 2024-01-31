@@ -1,5 +1,4 @@
-// ignore_for_file: avoid_print
-
+import 'package:flutter/material.dart';
 import 'package:nakama/nakama.dart';
 
 class NakamaService {
@@ -28,11 +27,11 @@ class NakamaAuth {
         create: true,
         username: username,
       );
-      print("Nakama UID: ${session.userId}");
+      debugPrint("Nakama UID: ${session.userId}");
       return session;
 
     } catch (e) {
-      print("Error: $e");
+      debugPrint("Error: $e");
       throw Exception(e);
     }
   }
@@ -46,11 +45,11 @@ class NakamaAuth {
         username: username,
         password: password,
       );
-      print("Nakama UID: ${session.userId}");
+      debugPrint("Nakama UID: ${session.userId}");
       return session;
 
     } catch (e) {
-      print("Error: $e");
+      debugPrint("Error: $e");
       throw Exception(e);
     }
   }
